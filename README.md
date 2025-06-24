@@ -26,6 +26,7 @@ This repository documents my learning journey and experimentation with materials
 ---
 
 ## 📂 Project Structure
+
 crystal-learning/
 ├── notebooks/         # Jupyter notebooks with live experiments
 ├── experiments/       # Writeups and notes on experiment results
