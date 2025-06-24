@@ -37,3 +37,4 @@ crystal-learning/
 ├── env/               # environment.yml file (Conda environment setup)
 ├── README.md          # Project overview and documentation
 └── .gitignore         # Prevents pushing unnecessary files to GitHub
+
