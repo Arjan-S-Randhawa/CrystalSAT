@@ -25,8 +25,9 @@ This repository documents my learning journey and experimentation with materials
 
 ---
 
-## 📂 Project Structure
+### 📁 Project Structure
 
+```plaintext
 crystal-learning/
 ├── notebooks/         # Jupyter notebooks with live experiments
 ├── experiments/       # Writeups and notes on experiment results
@@ -37,4 +38,5 @@ crystal-learning/
 ├── env/               # environment.yml file (Conda environment setup)
 ├── README.md          # Project overview and documentation
 └── .gitignore         # Prevents pushing unnecessary files to GitHub
+```
 
