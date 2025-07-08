@@ -533,6 +533,9 @@ class CrystalSAT:
 
 
     # GLOBAL CONSTRAINTS :
+    # NOT WORKING : IVE TRIED EVERYTHING!!
+    # ive tried so many ways for the sat solvrr to try and enforce cardinality constraints but it simply doesnt work 
+    # if anyone could fix this it would be really helpful
 
     def get_forced(self,atom_id):
 
