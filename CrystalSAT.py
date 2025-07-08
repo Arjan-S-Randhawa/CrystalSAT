@@ -6,6 +6,9 @@ University: University of Liverpool
 Degree: BSc Computer Science and Mathematics
 Email: sgarandh@liverpool.ac.uk
 This library encodes lattice constraints for use with SAT solvers and integrates with pymatgen for CIF export.
+IMPORTANT : 
+- Currently at_most and at_least, they currently pull ghost aux vars from the solver. will be fixed soon.
+- Model currently works with an nxnxn grid but will later be extended to an axbxc with angles alpha,beta,gamma work with CIF better
 """
 
 #imports for pysat
