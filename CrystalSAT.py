@@ -34,6 +34,8 @@ import builtins
 - fix global constraints 
 - change all t/type to atom_type
 - switch to maxSAT 
+- their is bug in one of the neighbors methods, ive fixed it but not yet updated file
+
 
 
 
@@ -648,29 +650,32 @@ class CrystalSAT:
 
 
     # export to CIF
+    # works well
 
-    def export_to_cif(self, model, filename="output.cif"):
+    def export_to_CIF(self, solution, scale, filename="output.cif"):
         """
-        Export a solve SAT model to a CIF file
+        Export a solved SAT model to a CIF file
+        scale allows to increase the size of unit scale from nxnxn (in angstroms)
+        by factor scale
+        Fractional coordinates are still accurate, as these are dependant on the length of a,b,c
+    
         """
         #Defines a cubic lattice
-        lattice = Lattice.cubic(self.n)
+        lattice = Lattice.cubic(self.n * scale)
 
         #Extract atoms
         species = []
         frac_coordinates = []
-        decoded = self.decode_solution(model)
+        decoded = self.decode_solution(solution, frac = True)
         for x,y,z,symbol,truth_value in decoded:
             if truth_value:
-                fx = x/self.n
-                fy = y/self.n
-                fz = z/self.n
                 species.append(symbol)
-                frac_coordinates.append([fx,fy,fz])
+                frac_coordinates.append([x,y,z])
 
         structure = Structure(lattice,species,frac_coordinates)
         structure.to(filename)
         print(f"CIF file is saved to {filename}")
+
 
 
 
