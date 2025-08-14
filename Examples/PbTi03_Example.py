@@ -41,9 +41,9 @@ crystal.bound_atom(ox, min_count=3, max_count=3)
 
 
 # 7) Solve and export
-# enumarates over 10,0000 solutions 
-# finds only two uniwue solutiions ( different unit cells)
+# enumarates over 10,0000 solutions and removes symmetrical solutioms
 # this includes PbTiO3 in Pm-3m
+# ends up being only 2 unique unit cells
 unique_solutions,uniques, groups= crystal.solve_unique(n_solutions =10000)
 if unique_solutions:
     print("Solution found!")
