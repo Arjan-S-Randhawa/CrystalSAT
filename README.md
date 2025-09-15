@@ -21,16 +21,21 @@ CrystalSAT is designed for use in **materials science, solid-state physics, and 
 ---
 
 ## 📂 Project Structure  
-
 ```plaintext
 crystalsat/
-├── notebooks/       # Example notebooks and tutorials
-├── experiments/     # Benchmarks and experimental runs
-├── docs/            # Documentation and references
-├── src/             # Core source code
-│   └── constraints/ # Constraint encodings and solver logic
-├── data/            # CIF files and generated structures
-├── env/             # Conda environment setup
-├── README.md        # Project overview
-└── .gitignore       # Ignore cache/build files
+├── Base.py                 # Base classes and shared functionality
+├── Cardinality.py          # Cardinality constraints (min/max atom counts, etc.)
+├── Constraints.py          # Core constraint definitions
+├── Coordinate.py           # Coordinate handling and transformations
+├── Encoding.py             # CNF encodings and SAT solver interfaces
+├── Get.py                  # Query helpers for retrieving constraints/data
+├── Grab.py                 # Utility functions for input/output operations
+├── NeighborAndDistances.py # Neighbor search and distance calculations
+├── NeighborConstraints.py  # Constraints based on neighbor relations
+├── OrbitsAndSymmetry.py    # Symmetry operations and orbit representations
+├── SolveAndExport.py       # Running solvers and exporting valid structures
+├── __init__.py             # Package initialisation
+├── shannon-radii.json      # Ionic radii reference data
+└── temp/                   # Temporary files or cached data
+
 
