@@ -1,43 +1,36 @@
-# 🧊 CrystalSAT
+# 🧊 CrystalSAT  
 
-This repository documents my learning journey and experimentation with materials science, structure prediction, and symbolic AI tools — particularly for my Google DeepMind internship. It focuses on using Python libraries such as `pymatgen`, `ASE`, and `python-sat` to explore, simulate, and reason about atomic structures.
+**CrystalSAT** is a Python library for generating valid crystal structures using **constraint programming** and **SAT solvers**.  
 
----
+Traditional crystal generators often rely on stochastic sampling or machine learning, which can produce large numbers of invalid candidates that require expensive filtering. CrystalSAT takes a different approach: by encoding chemical and geometric rules directly into a satisfiability framework, it produces **valid-by-construction** structures.  
 
-## 🧪 Goals
-
-- Learn to manipulate and analyse **crystal structures**
-- Simulate lattice geometries and calculate material properties
-- Explore **constraint-solving and symbolic reasoning** using SAT solvers
-- Build clean and reproducible environments with **Conda**
-- Document insights and methods for future academic work
-- Create a library than can encode crystal strutures and visualise them, with *CNF constraints*
+CrystalSAT is designed for use in **materials science, solid-state physics, and computational chemistry**, providing a flexible and extensible foundation for research into lattice geometries, symmetry, and crystal structure prediction.  
 
 ---
 
-## 🧰 Key Libraries Used
+## 🧰 Key Libraries  
 
 | Library        | Purpose                                                                |
 |----------------|------------------------------------------------------------------------|
-| `pymatgen`     | Materials structure manipulation (lattices, unit cells, symmetry)      |
-| `ASE`          | Atomic simulations (building, viewing, converting structures)          |
-| `python-sat`   | Constraint solving using SAT solvers (e.g., for symbolic reasoning)    |
-| `pypblib`      | Optional backend for `python-sat` (optimised for pseudo-Boolean logic) |
+| `pymatgen`     | Crystal manipulation (lattices, symmetry, CIF support)                 |
+| `ASE`          | Atomic simulations and structure conversion/visualisation              |
+| `pySAT`        | SAT/constraint solving for structure generation                        |
+| `pypblib`      | Optimised backend for pseudo-Boolean constraints                       |
+|  `NumPy`       | Library for mathematics calculations                                   |
 
 ---
 
-### 📁 Project Structure
+## 📂 Project Structure  
 
 ```plaintext
-crystal-learning/
-├── notebooks/         # Jupyter notebooks with live experiments
-├── experiments/       # Writeups and notes on experiment results
-├── explanations/      # Markdown explanations of source code + key formulas
-├── src/               # Main Python source code
-│   └── utils/         # Helper functions for I/O, visualisation, etc.
-├── data/              # Test CIFs or simulation files
-├── env/               # environment.yml file (Conda environment setup)
-├── README.md          # Project overview and documentation
-└── .gitignore         # Prevents pushing unnecessary files to GitHub
-```
+crystalsat/
+├── notebooks/       # Example notebooks and tutorials
+├── experiments/     # Benchmarks and experimental runs
+├── docs/            # Documentation and references
+├── src/             # Core source code
+│   └── constraints/ # Constraint encodings and solver logic
+├── data/            # CIF files and generated structures
+├── env/             # Conda environment setup
+├── README.md        # Project overview
+└── .gitignore       # Ignore cache/build files
 
